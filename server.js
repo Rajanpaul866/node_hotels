@@ -15,6 +15,8 @@ const db= require('./db')
 //Person model
 const Person= require('./models/Person')
 const MenuItem= require('./models/MenuItem')
+require('dotenv').config()
+const PORT= process.env.PORT || 3000
 
 app.use(bodyParser.json())
 
@@ -40,4 +42,4 @@ app.use('/menu', menuItemRoute)
 //     res.send("Chicken will be delivered")
 // })
 
-app.listen(3000)
+app.listen(PORT)
